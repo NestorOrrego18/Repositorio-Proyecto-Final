@@ -19,6 +19,7 @@ public class Presenter {
     private View view;
     private UserData data = new UserData();
     private Appointment appointment = new Appointment();
+    private Doctor doctor = new Doctor();
 
     public Presenter(View view, UserData data) {
         this.view = view;
@@ -33,13 +34,8 @@ public class Presenter {
                 case "Registre un Usuario":
                     User user = view.getUserDetails();
                     data.addUser(user);
+                    data.createUsers();
                     view.showMessage("Usuario registrado");
-                    break;
-
-                case "Registre un Doctor":
-                    Doctor doctor = view.getDoctorDetails();
-                    data.addDoctor(doctor);
-                    view.showMessage("Doctor registrado");
                     break;
 
                 case "Ver Usuarios":
@@ -47,15 +43,19 @@ public class Presenter {
                     break;
 
                 case "Ver Doctores":
-                    view.displayDoctors(data.listDoctors());
+                data.createDoctors();
+                view.displayDoctors(data.listDoctors());
                     break;
 
                 case "Asignar Citas":
                     appointment.createList();
+                    data.listUsers();
                     JOptionPane.showMessageDialog(null, appointment.showList(), "Horarios Disponibles", 1);
+                    String name=JOptionPane.showInputDialog("Por Favor, Escriba su nombre");
                     String hora=JOptionPane.showInputDialog("Por Favor, Escriba una de las Horas Disponibles");
                     String type=JOptionPane.showInputDialog("Por Favor, Escriba General (si es una cita general) o Especializada (si es una cita especializada)");
-                    view.assignAppointments(hora, type);
+                    //appointment.assignAppointment(1, name, hora, type);
+                    
                     JOptionPane.showMessageDialog(null, appointment.showList2(), "Citas", 1);
                     break;
 

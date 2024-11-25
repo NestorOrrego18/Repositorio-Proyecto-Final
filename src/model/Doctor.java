@@ -6,17 +6,15 @@ Project: Proyecto final
 */
 
 public class Doctor extends Info {
-    private String specialty;
+    private String doctorType;
 
-    public Doctor(int id, String name, String email, String phone, String specialty) {
+    public Doctor(int id, String name, String email, String phone, String doctorType) {
         super(id, name, email, phone);
-        this.specialty = specialty;
+        this.doctorType = doctorType;
     }
-    public Doctor(){
-        
+    public Doctor(){   
     }
-
-    public String getSpecialty() {
-        return specialty;
+    public String getDoctorType() {
+        return doctorType;
     }
 }

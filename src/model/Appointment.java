@@ -7,6 +7,7 @@ public class Appointment {
 
     private ArrayList<Appointment> appointment;
     private ArrayList<String> hour;
+    private ArrayList<String> appointments;
 
     DecimalFormat df = new DecimalFormat("#.00");
 
@@ -16,15 +17,17 @@ public class Appointment {
     private String type;
 
     public Appointment(int newId, String newName, String newTime, String newType) {
-        id = newId;
-        name = newName;
-        time = newTime;
-        type = newType;
+        this.id = newId;
+        this.name = newName;
+        this.time = newTime;
+        this.type = newType;
     }
+    
 
     public Appointment() {
         appointment = new ArrayList<>();
         hour = new ArrayList<>();
+        appointments = new ArrayList<>();
     }
 
     public void createList() {
@@ -55,25 +58,84 @@ public class Appointment {
         }
     }
 
+    public void assignAppointment(int newId, String newName, String newTime, String newType) {
+        appointment.add(new Appointment(newId, newName, newTime, newType));
+        
+    }
+    public void assignOneAppointment(){
+        appointment.add(new Appointment(10, "lol ", "6,00", ""));
+    }
+
     public String showList() {
         String listt = "";
         for (String list : hour) {
             listt += list + " - " +"\n";
+            
         }
         return listt;
     }
     
+    public ArrayList<Appointment> getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(ArrayList<Appointment> appointment) {
+        this.appointment = appointment;
+    }
+
+    public ArrayList<String> getHour() {
+        return hour;
+    }
+
+    public void setHour(ArrayList<String> hour) {
+        this.hour = hour;
+    }
+
+   
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String showList2() {
         String listt = "";
         for (Appointment list : appointment) {
-            listt += list + " - " +"\n";
+            listt += list.getId() + "  "+ list.getName()+" "+list.getTime()+ " "+list.getType()+"\n";
         }
         return listt;
     }
 
+    appointments.add(appointmentData);
 
-    public void assignAppointment(int newId, String newName, String newTime, String newType) {
-        appointment.add(new Appointment(newId, newName, newTime, newType));
-    }
+
+    
 
 }
