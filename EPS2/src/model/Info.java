@@ -1,8 +1,8 @@
 package model;
 
-/*Name:Nestor Felipe Orrego Ulloa 
-Date:23/11/2024
-Proyect: proyecto final 
+/*Name: Nestor Felipe Orrego Ulloa 
+Date: 23/11/2024
+Project: Proyecto final 
 */
 
 public class Info {
@@ -10,9 +10,6 @@ public class Info {
     protected String name;
     protected String email;
     protected String phone;
-
-    public Info() {
-    }
 
     public Info(int id, String name, String email, String phone) {
         this.id = id;
@@ -36,21 +33,5 @@ public class Info {
     public String getPhone() {
         return phone;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
 }
+

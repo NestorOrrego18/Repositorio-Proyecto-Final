@@ -13,7 +13,7 @@ public class Doctor extends Info {
         this.specialty = specialty;
     }
     public Doctor(){
-        
+        super(0,"pp","ppm","123");
     }
 
     public String getSpecialty() {

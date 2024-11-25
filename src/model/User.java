@@ -1,5 +1,4 @@
 package model;
-
 /*Name:Nestor Felipe Orrego Ulloa 
 Date:23/11/2024
 Proyect: proyecto final 
@@ -8,7 +7,10 @@ Proyect: proyecto final
 public class User extends Info {
     private String medicalRecord;
 
-    public void Users(){   
+    Info info= new Info();
+    UserData userData= new UserData();
+
+    public User(){   
     }
 
     public User(int id, String name, String email, String phone, String medicalRecord) {
@@ -16,9 +18,14 @@ public class User extends Info {
         this.medicalRecord = medicalRecord;
     }
 
+
     public String getMedicalRecord() {
-        return medicalRecord;
+     
+   return medicalRecord;
     }
 
-    
+    public void setMedicalRecord(String medicalRecord) {
+        this.medicalRecord = medicalRecord;
+    }
 }
+    

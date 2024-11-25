@@ -1,4 +1,5 @@
 package model;
+
 import java.util.ArrayList;
 
 /*Name:Nestor Felipe Orrego Ulloa 
@@ -8,32 +9,42 @@ Proyect: proyecto final
 
 public class UserData {
 
-    private ArrayList<Info> users = new ArrayList<>();
+    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<Doctor> doctors = new ArrayList<>();    
 
     // Agregar un usuario al repositorio
-    public void addUser(Info user) {
+    public void addUser(User user) {
         users.add(user);
     }
 
-    // Eliminar un usuario por ID
-    public void removeUser(int id) {
-        users.removeIf(user -> user.getId() == id);
+    public void addDoctor(Doctor doctor) {
+        doctors.add(doctor);
     }
 
     // Obtener todos los usuarios
-    public ArrayList<Info> getUsers() {
+    public ArrayList<User> getUsers() {
         return users;
     }
 
-    // Buscar un usuario por ID
-    public Info findUserById(int id) {
-        for (Info user : users) {
-            if (user.getId() == id) {
-                return user;
-            }
-        }
-        return null; // Si no se encuentra el usuario
+    public ArrayList<Doctor> getDoctors() {
+        return doctors;
     }
 
+    public String listUsers() {
+        String dataUser = "";
+        for (User userr : users) {
+            dataUser += ("ID: ") + (userr.getId()) + (", Name: ") + (userr.getName()) + ("\n");
+        }
+        return dataUser;
+    }
+
+    public String listDoctors() {
+        String dataDoctor = "";
+        for (Doctor doctorr : doctors) {
+            dataDoctor += ("ID: ") + (doctorr.getId()) + (", Name: ") + (doctorr.getName()) + (", Especialidad: ")
+                    + (doctorr.getSpecialty()) + ("\n");
+        }
+        return dataDoctor;
+    }
     
 }
