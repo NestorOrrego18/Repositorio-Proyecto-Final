@@ -75,6 +75,14 @@ public class Appointment {
         return listt;
     }
     
+    public String showList2() {
+        String listt = "";
+        for (Appointment list : appointment) {
+            listt += list.getId() + "  "+ list.getName()+" "+list.getTime()+ " "+list.getType()+"\n";
+        }
+        return listt;
+    }
+
     public ArrayList<Appointment> getAppointment() {
         return appointment;
     }
@@ -123,19 +131,6 @@ public class Appointment {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String showList2() {
-        String listt = "";
-        for (Appointment list : appointment) {
-            listt += list.getId() + "  "+ list.getName()+" "+list.getTime()+ " "+list.getType()+"\n";
-        }
-        return listt;
-    }
-
-    appointments.add(appointmentData);
-
-
-    
+    }    
 
 }
